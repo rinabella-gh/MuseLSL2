@@ -166,7 +166,7 @@ class Canvas(app.Canvas):
         self._timer = app.Timer("auto", connect=self.on_timer, start=True)
         gloo.set_viewport(0, 0, 640,480)
         gloo.set_state(
-            clear_color="#000000",
+            clear_color="#04F404",
             blend=True,
             blend_func=("src_alpha", "one_minus_src_alpha"),
         )

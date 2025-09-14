@@ -151,9 +151,9 @@ class Canvas(app.Canvas):
         self.display_names = []
         self.display_quality = []
         for channel in self.ch_names:
-            text = visuals.TextVisual(channel, bold=True, color="blue", face="Lato")
+            text = visuals.TextVisual(channel, bold=True, color="grey", face="Lato", size=8 )
             self.display_names.append(text)
-            text = visuals.TextVisual("", bold=True, color="blue", face="Lato")
+            text = visuals.TextVisual("", bold=True, color="grey", face="Lato", size=8)
             self.display_quality.append(text)
 
         # Store

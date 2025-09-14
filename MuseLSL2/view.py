@@ -279,7 +279,7 @@ class Canvas(app.Canvas):
 
     def on_draw(self, event):
         gloo.clear()
-        gloo.set_line_width(5.0)
+        gloo.set_line_width(3.0)
         gloo.set_viewport(0, 0, *self.physical_size)
         self.program.draw("line_strip")
         [t.draw() for t in self.display_names + self.display_quality]

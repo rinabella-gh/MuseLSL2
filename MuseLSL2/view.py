@@ -106,7 +106,7 @@ class Canvas(app.Canvas):
             (3 / 255, 169 / 255, 244 / 255),  # Blue
             (33 / 255, 150 / 255, 243 / 255),  # Dark blue
             (103 / 255, 58 / 255, 183 / 255),  # Dark Purple
-            (0 / 255, 0 / 195, 0 / 205),  # Pink
+            (255 / 255, 191 / 255, 234 / 255),  # Pink
         ]
         # Colors for impedence
         self.colors_quality = plt.get_cmap("RdYlGn")(np.linspace(0, 1, 11))[::-1]
@@ -151,9 +151,9 @@ class Canvas(app.Canvas):
         self.display_names = []
         self.display_quality = []
         for channel in self.ch_names:
-            text = visuals.TextVisual(channel, bold=True, color="pink")
+            text = visuals.TextVisual(channel, bold=True, color="pink", face="")
             self.display_names.append(text)
-            text = visuals.TextVisual("", bold=True, color="pink")
+            text = visuals.TextVisual("", bold=True, color="pink", face="z")
             self.display_quality.append(text)
 
         # Store
@@ -218,11 +218,11 @@ class Canvas(app.Canvas):
         for i in range(5):
             self.display_quality[i].text = f"{sd[i]:.2f}"
             self.display_quality[i].color = self.colors_quality[co[i]]
-            self.display_names[i].face = "EarthBound Dialogue Gold Regular"
+            self.display_names[i].face = "LatoBlack"
             self.display_quality[i].font_size = 12 + co[i]
 
             self.display_names[i].font_size = 12 + co[i]
-            self.display_names[i].face = "EarthBound Dialogue Gold Regular"
+            self.display_names[i].face = "EarthBoundDialogueGoldRegular"
             self.display_names[i].color = self.colors_quality[co[i]]
 
         # Normalize PPG (3 channels) --------------------

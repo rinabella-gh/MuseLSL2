@@ -218,11 +218,8 @@ class Canvas(app.Canvas):
         for i in range(5):
             self.display_quality[i].text = f"{sd[i]:.2f}"
             self.display_quality[i].color = self.colors_quality[co[i]]
-            self.display_names[i].face = "LatoBlack"
             self.display_quality[i].font_size = 12 + co[i]
-
             self.display_names[i].font_size = 12 + co[i]
-            self.display_names[i].face = "EarthBoundDialogueGoldRegular"
             self.display_names[i].color = self.colors_quality[co[i]]
 
         # Normalize PPG (3 channels) --------------------

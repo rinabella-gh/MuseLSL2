@@ -138,7 +138,6 @@ class Canvas(app.Canvas):
             np.tile(np.arange(eeg_info["n_samples"]), n_rows),
         ].astype(np.float32)
 
-        gloo.set_line_width(3.0)
         self.program = gloo.Program(VERT_SHADER, FRAG_SHADER)
         self.program["a_position"] = self.data.T.astype(np.float32).reshape(-1, 1)
         self.program["a_index"] = index
@@ -152,9 +151,9 @@ class Canvas(app.Canvas):
         self.display_names = []
         self.display_quality = []
         for channel in self.ch_names:
-            text = visuals.TextVisual(channel, bold=True, color="black", face="LatoBlack")
+            text = visuals.TextVisual(channel, bold=True, color="blue", face="Lato")
             self.display_names.append(text)
-            text = visuals.TextVisual("", bold=True, color="black", face="Lato Black")
+            text = visuals.TextVisual("", bold=True, color="blue", face="Lato")
             self.display_quality.append(text)
 
         # Store

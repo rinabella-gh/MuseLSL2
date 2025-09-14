@@ -106,7 +106,7 @@ class Canvas(app.Canvas):
             (3 / 255, 169 / 255, 244 / 255),  # Blue
             (33 / 255, 150 / 255, 243 / 255),  # Dark blue
             (103 / 255, 58 / 255, 183 / 255),  # Dark Purple
-            (0 / 255, 0 / 255, 0 / 255),  # Black
+            (0 / 255, 0 / 195, 0 / 205),  # Pink
         ]
         # Colors for impedence
         self.colors_quality = plt.get_cmap("RdYlGn")(np.linspace(0, 1, 11))[::-1]

@@ -218,9 +218,9 @@ class Canvas(app.Canvas):
         for i in range(5):
             self.display_quality[i].text = f"Quality level: {sd[i]:.2f}"
             self.display_quality[i].color = "black"
-            self.display_quality[i].font_size = 12 
-            self.display_names[i].font_size = 12
-            self.display_names[i].color = self.colors_quality[co[i]]
+            self.display_quality[i].font_size = 8
+            self.display_names[i].font_size = 8
+            self.display_names[i].color = "black"
 
         # Normalize PPG (3 channels) --------------------
         if self.ppg:
@@ -265,7 +265,7 @@ class Canvas(app.Canvas):
         for i, t in enumerate(self.display_names):
             t.transforms.configure(canvas=self, viewport=vp)
             t.pos = (
-                self.size[0] * 0.003,
+                self.size[0] * 0.01,
                 ((i + 0.25) / self.n_channels) * self.size[1],
             )
 

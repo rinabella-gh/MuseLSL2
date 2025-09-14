@@ -94,7 +94,7 @@ def view():
 class Canvas(app.Canvas):
     def __init__(self, eeg, ppg=None):
         app.Canvas.__init__(self, title="MuseLSL2 - Use your wheel to zoom!", keys="interactive")
-
+        
         # Get info from stream
         eeg_info = _view_info(eeg)
         self.ch_names = eeg_info["ch_names"]
@@ -164,7 +164,7 @@ class Canvas(app.Canvas):
 
         # View
         self._timer = app.Timer("auto", connect=self.on_timer, start=True)
-        gloo.set_viewport(0, 0, *self.physical_size)
+        gloo.set_viewport(0, 0, 640,480)
         gloo.set_state(
             clear_color="#000000",
             blend=True,

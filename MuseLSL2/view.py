@@ -217,7 +217,7 @@ class Canvas(app.Canvas):
         # Loop through the 5 last channels indices (EEG channels)
         for i in range(5):
             self.display_quality[i].text = f"Quality level: {sd[i]:.2f}"
-            self.display_quality[i].color = black
+            self.display_quality[i].color = "black"
             self.display_quality[i].font_size = 12 
             self.display_names[i].font_size = 12
             self.display_names[i].color = self.colors_quality[co[i]]

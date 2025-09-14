@@ -151,9 +151,9 @@ class Canvas(app.Canvas):
         self.display_names = []
         self.display_quality = []
         for channel in self.ch_names:
-            text = visuals.TextVisual(channel, bold=True, color="#696969", face="Lato", font_size=6 )
+            text = visuals.TextVisual(channel, bold=True, color="#696969", face="Lato", font_size=8 )
             self.display_names.append(text)
-            text = visuals.TextVisual("", bold=True, color="#696969", face="Lato", font_size=6)
+            text = visuals.TextVisual("", bold=True, color="#696969", face="Lato", font_size=8)
             self.display_quality.append(text)
 
         # Store
@@ -166,7 +166,7 @@ class Canvas(app.Canvas):
         self._timer = app.Timer("auto", connect=self.on_timer, start=True)
         gloo.set_viewport(0, 0, 640,480)
         gloo.set_state(
-            clear_color="#04F404",
+            clear_color="white",
             blend=True,
             blend_func=("src_alpha", "one_minus_src_alpha"),
         )

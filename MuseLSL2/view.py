@@ -151,9 +151,9 @@ class Canvas(app.Canvas):
         self.display_names = []
         self.display_quality = []
         for channel in self.ch_names:
-            text = visuals.TextVisual(channel, bold=True, color="black")
+            text = visuals.TextVisual(channel, bold=True, color="pink")
             self.display_names.append(text)
-            text = visuals.TextVisual("", bold=True, color="black")
+            text = visuals.TextVisual("", bold=True, color="pink")
             self.display_quality.append(text)
 
         # Store
@@ -218,9 +218,11 @@ class Canvas(app.Canvas):
         for i in range(5):
             self.display_quality[i].text = f"{sd[i]:.2f}"
             self.display_quality[i].color = self.colors_quality[co[i]]
+            self.display_names[i].face = "EarthBound Dialogue Gold Regular"
             self.display_quality[i].font_size = 12 + co[i]
 
             self.display_names[i].font_size = 12 + co[i]
+            self.display_names[i].face = "EarthBound Dialogue Gold Regular"
             self.display_names[i].color = self.colors_quality[co[i]]
 
         # Normalize PPG (3 channels) --------------------

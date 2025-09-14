@@ -265,7 +265,7 @@ class Canvas(app.Canvas):
         for i, t in enumerate(self.display_names):
             t.transforms.configure(canvas=self, viewport=vp)
             t.pos = (
-                self.size[0] * 0.01,
+                self.size[0] * 0.02,
                 ((i + 0.25) / self.n_channels) * self.size[1],
             )
 

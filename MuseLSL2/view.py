@@ -273,7 +273,7 @@ class Canvas(app.Canvas):
             t.transforms.configure(canvas=self, viewport=vp)
             t.pos = (
                 self.size[0] * 0.925,
-                ((i + 0.5) / self.n_channels) * self.size[1],
+                ((i) / self.n_channels) * self.size[1],
             )
 
     def on_draw(self, event):

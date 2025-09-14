@@ -138,6 +138,7 @@ class Canvas(app.Canvas):
             np.tile(np.arange(eeg_info["n_samples"]), n_rows),
         ].astype(np.float32)
 
+        gloo.set_line_width(3.0)
         self.program = gloo.Program(VERT_SHADER, FRAG_SHADER)
         self.program["a_position"] = self.data.T.astype(np.float32).reshape(-1, 1)
         self.program["a_index"] = index

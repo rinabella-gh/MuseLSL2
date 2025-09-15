@@ -209,13 +209,13 @@ class Canvas(app.Canvas):
         plot_data = self.data.copy()
 
         # Normalize EEG (last 5 channels) --------------------
-        plot_data[:, -5:] = (plot_data[:, -5:] - plot_data[:, -5:].mean(axis=0)) / 500
+        plot_data[:, -4:] = (plot_data[:, -4:] - plot_data[:, -4:].mean(axis=0)) / 500
         # Compute Impedence
         sd = np.std(plot_data[-int(self.sfreq) :, -5:], axis=0)[::-1] * 500
         # Discretize the impedence into 11 levels for coloring
-        co = np.int32(np.tanh((sd - 30) / 15) * 5 + 5)
+        co = np.int32(np.tanh((sd - 30) / 15) * 4 + 4)
         # Loop through the 5 last channels indices (EEG channels)
-        for i in range(5):
+        for i in range(4):
             self.display_quality[i].text = f"{sd[i]:.2f}"
             self.display_quality[i].color = "black"
             self.display_quality[i].font_size = 32
